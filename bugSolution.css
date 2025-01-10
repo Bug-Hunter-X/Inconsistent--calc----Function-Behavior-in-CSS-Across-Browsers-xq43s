@@ -1,0 +1,21 @@
+Several workarounds can be implemented to mitigate the inconsistencies of `calc()`:
+
+**1. Using Media Queries:** For simpler cases, media queries can be used to set the width differently for various browser versions or screen sizes, ensuring a minimum acceptable width.
+
+**2. JavaScript:**  Dynamically calculate and set the div width using JavaScript, providing better cross-browser compatibility. (This adds more complexity)
+
+**3. Avoid Mixed Units:** Whenever possible, avoid mixing percentages and pixel units in `calc()` functions to minimize the likelihood of inconsistencies.
+
+**Example (Media Query):**
+
+```css
+@media (min-width: 768px) {
+div { width: calc(50% - 10px); }
+}
+
+@media (max-width: 767px) {
+div { width: 200px; /* Fallback for smaller screens*/ }
+}
+```
+
+**Note:**  The best solution will depend on the specific context and the level of compatibility required.
